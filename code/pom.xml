@@ -19,5 +19,7 @@
     </properties>
 
     <modules>
+        <module>study-parent</module>
+        <module>study-java</module>
     </modules>
 </project>
