@@ -25,6 +25,11 @@
                 <artifactId>study-java</artifactId>
                 <version>${study.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.study.pay</groupId>
+                <artifactId>study-pay</artifactId>
+                <version>${study.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

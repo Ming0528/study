@@ -21,5 +21,6 @@
     <modules>
         <module>study-parent</module>
         <module>study-java</module>
+        <module>study-pay</module>
     </modules>
 </project>
