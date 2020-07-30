@@ -30,6 +30,11 @@
                 <artifactId>study-pay</artifactId>
                 <version>${study.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.study.leetcode</groupId>
+                <artifactId>study-leetcode</artifactId>
+                <version>${study.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

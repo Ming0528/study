@@ -22,5 +22,6 @@
         <module>study-parent</module>
         <module>study-java</module>
         <module>study-pay</module>
+        <module>study-leetcode</module>
     </modules>
 </project>
