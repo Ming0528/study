@@ -15,6 +15,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <junit.version>4.13</junit.version>
         <study.version>1.0-SNAPSHOT</study.version>
     </properties>
 
@@ -34,6 +35,11 @@
                 <groupId>com.study.leetcode</groupId>
                 <artifactId>study-leetcode</artifactId>
                 <version>${study.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
