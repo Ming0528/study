@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script type="text/javascript">            
+            function fn2() {
+                //获取要携带的参数
+                var token = document.getElementById("token").value;
+                //发送异步请求
+                //1.创建ajax引擎对象----所有操作都是由ajax引擎完成
+                var xmlHttp; //ajax请求状态码0
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+         
+                //2.为引擎对象绑定监听事件 (设置回调函数)
+                xmlhttp.onreadystatechange = function(){
+                    //等待服务器响应
+                    if(xmlhttp.readyState==4){
+                        //当请求状态为4时，说明请求完成
+                        if(xmlhttp.status==200){
+                            //判断服务器响应状态吗是否正常
+                            //取出响应的数据
+                            var result = xmlhttp.responseText;
+                            //将数据通过JS添加到页面
+                            document.getElementById("result").innerHTML=result;
+                        }
+                    }
+                }
+                //3.绑定服务器地址
+                //第一个参数：请求方式GET/POST
+                //第二个参数：后台服务器地址
+                //第三个参数：是否是异步 true--异步   false--同步
+                xmlhttp.open("POST", "http://127.0.0.1:8088/mock/test", true);
+                //设置Content-type
+                xmlhttp.setRequestHeader("Content-type","application/json");
+                //4.发送请求
+                // var param = "token:" + ''; 
+                xmlhttp.send('{"token":'+ token + '}');
+            }
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PayPal Payment page</title>
+    </head>
+    <body>
+        <form action="ajax" method="post">
+            <input type="text" id="token" name="token" placeholder="请输orderId"> 
+            <input type="button" onclick="fn2()" value="提交POST" />
+        </form>
+    </body>
+</html>

@@ -36,6 +36,7 @@
                 <artifactId>study-leetcode</artifactId>
                 <version>${study.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>

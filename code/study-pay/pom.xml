@@ -18,6 +18,7 @@
 
     <modules>
         <module>study-pay-cybersource</module>
+        <module>study-pay-paypal</module>
     </modules>
 
 </project>
