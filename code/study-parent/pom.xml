@@ -16,6 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <junit.version>4.13</junit.version>
+        <commons.csv.version>1.8</commons.csv.version>
         <study.version>1.0-SNAPSHOT</study.version>
     </properties>
 
@@ -41,6 +42,12 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-csv</artifactId>
+                <version>${commons.csv.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

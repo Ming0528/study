@@ -36,4 +36,21 @@ public class longestSubstring {
         }
         System.out.println("result is:" + ans);
     }
+
+    private static int numAdd(String numStr){
+        int num = 0;
+        try {
+            num = Integer.valueOf(numStr);
+            return ++ num;
+        }
+        catch (NumberFormatException e) {
+            return num;
+        }
+        finally {
+            return ++ num;
+        }
+    }
+    public static void main(String[] args){
+        System.out.println(numAdd("1 "));
+    }
 }
