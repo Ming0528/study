@@ -22,7 +22,7 @@ import org.junit.Test;
  */
 public class CsvParserTest {
 
-    String SAMPLE_CSV_FILE_PATH = "D:\\cache\\reconcile\\cybersource\\TransactionRequestReport_20200923_001.csv";
+    public static final String SAMPLE_CSV_FILE_PATH = "D:\\cache\\reconcile\\cybersource\\TransactionRequestReport_20200923_001.csv";
 
     @Test
     public void readCsvFile() {
