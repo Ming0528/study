@@ -1,10 +1,9 @@
 package com.study.java.lang.parser;
 
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
-import org.jsoup.helper.DataUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -51,12 +50,25 @@ public class HtmlParserTest {
     @Test
     public void parseHtml1() {
         try {
-
             File currentFile = new File(FILE_PATH);
-            currentFile.renameTo(new File("D:\\cache\\ipay88\\TransacRpt.html"));
-            File newFile = new File("D:\\cache\\ipay88\\TransacRpt.html");
-            Document document = Jsoup.parse(newFile, "UTF-8");
+            String currentFileName = currentFile.getName().substring(0, currentFile.getName().lastIndexOf("."));
+            String currentFileSuffix = currentFile.getName().substring(currentFile.getName().lastIndexOf("."));
 
+            // 当前时间戳
+            String nowDateStr = "20201021";
+            String currentFileParentPath = currentFile.getParentFile().getAbsolutePath();
+            String opearFileNames = "";
+            File opearFile;
+            opearFileNames = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + currentFileSuffix;
+            opearFile = new File(opearFileNames);
+            // 复制文件
+            FileUtils.copyFile(currentFile, opearFile);
+            // 重命名 后缀
+            String htmlFileName = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + "." + "html";
+            File htmlFile = new File(htmlFileName);
+            opearFile.renameTo(htmlFile);
+
+            Document document = Jsoup.parse(htmlFile, "UTF-8");
             Element tableElement = document.select("table[bgcolor='#cccccc']").first();
             Element tbodyElement = tableElement.getElementsByTag("tbody").first();
             Elements trElements = tbodyElement.getElementsByTag("tr");
@@ -68,10 +80,6 @@ public class HtmlParserTest {
                 for(Element tdElement : tdElements) {
                     System.out.println(tdElement.text());
                 }
-//                tdElements.get(1).text();
-//                tdElements.get(2).text();
-//                tdElements.get(3).text();
-//                tdElements.get(4).text();
                 count++;
             }
             System.out.println("parse html end");
