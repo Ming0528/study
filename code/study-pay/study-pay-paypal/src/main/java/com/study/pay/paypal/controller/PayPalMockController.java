@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/mock")
+@RequestMapping("/study/paypal//mock")
 public class PayPalMockController {
     @RequestMapping("/test")
     public void test(@RequestBody Map<String, String> param) {

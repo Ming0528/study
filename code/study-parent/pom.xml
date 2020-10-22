@@ -15,7 +15,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
+        <spring-boot-starter-web.version>2.1.6.RELEASE</spring-boot-starter-web.version>
+        <spring-context.version>5.1.13.RELEASE</spring-context.version>
+        <spring-beans.version>5.1.13.RELEASE</spring-beans.version>
+
         <junit.version>4.13</junit.version>
+        <lombok.version>1.16.20</lombok.version>
         <commons.csv.version>1.8</commons.csv.version>
         <commons.io.version>2.2</commons.io.version>
         <apache.poi.version>3.9</apache.poi.version>
@@ -43,11 +49,33 @@
                 <version>${study.version}</version>
             </dependency>
 
+            <!--spring jar包-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-starter-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-context.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-beans.version}</version>
+            </dependency>
+
             <!--第三方jar包-->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -84,7 +112,6 @@
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
