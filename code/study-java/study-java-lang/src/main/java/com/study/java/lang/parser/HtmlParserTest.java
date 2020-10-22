@@ -1,6 +1,8 @@
 package com.study.java.lang.parser;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
@@ -50,25 +52,28 @@ public class HtmlParserTest {
     @Test
     public void parseHtml1() {
         try {
-            File currentFile = new File(FILE_PATH);
-            String currentFileName = currentFile.getName().substring(0, currentFile.getName().lastIndexOf("."));
-            String currentFileSuffix = currentFile.getName().substring(currentFile.getName().lastIndexOf("."));
+//            File currentFile = new File(FILE_PATH);
+//            String currentFileName = currentFile.getName().substring(0, currentFile.getName().lastIndexOf("."));
+//            String currentFileSuffix = currentFile.getName().substring(currentFile.getName().lastIndexOf("."));
+//
+//            // 当前时间戳
+//            String nowDateStr = "20201021";
+//            String currentFileParentPath = currentFile.getParentFile().getAbsolutePath();
+//            String opearFileNames = "";
+//            File opearFile;
+//            opearFileNames = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + currentFileSuffix;
+//            opearFile = new File(opearFileNames);
+//            // 复制文件
+//            FileUtils.copyFile(currentFile, opearFile);
+//            // 重命名 后缀
+//            String htmlFileName = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + "." + "html";
+//            File htmlFile = new File(htmlFileName);
+//            opearFile.renameTo(htmlFile);
+//            Document document = Jsoup.parse(htmlFile, "UTF-8");
 
-            // 当前时间戳
-            String nowDateStr = "20201021";
-            String currentFileParentPath = currentFile.getParentFile().getAbsolutePath();
-            String opearFileNames = "";
-            File opearFile;
-            opearFileNames = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + currentFileSuffix;
-            opearFile = new File(opearFileNames);
-            // 复制文件
-            FileUtils.copyFile(currentFile, opearFile);
-            // 重命名 后缀
-            String htmlFileName = currentFileParentPath + File.separator + currentFileName + "_" + nowDateStr + "." + "html";
-            File htmlFile = new File(htmlFileName);
-            opearFile.renameTo(htmlFile);
-
-            Document document = Jsoup.parse(htmlFile, "UTF-8");
+            File f = new File(FILE_PATH);
+            InputStream in = new FileInputStream(f);
+            Document document = Jsoup.parse(in, "UTF-8", f.getAbsolutePath());
             Element tableElement = document.select("table[bgcolor='#cccccc']").first();
             Element tbodyElement = tableElement.getElementsByTag("tbody").first();
             Elements trElements = tbodyElement.getElementsByTag("tr");
