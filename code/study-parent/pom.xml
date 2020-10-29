@@ -17,6 +17,7 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 
         <spring-boot-starter-web.version>2.1.6.RELEASE</spring-boot-starter-web.version>
+        <spring-boot-starter-test.version>2.1.6.RELEASE</spring-boot-starter-test.version>
         <spring-context.version>5.1.13.RELEASE</spring-context.version>
         <spring-beans.version>5.1.13.RELEASE</spring-beans.version>
 
@@ -54,6 +55,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot-starter-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-test.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>

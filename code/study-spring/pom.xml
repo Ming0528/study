@@ -18,6 +18,7 @@
 
     <modules>
         <module>study-spring-springboot</module>
+        <module>study-spring-springframework</module>
     </modules>
 
 </project>
