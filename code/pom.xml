@@ -24,5 +24,6 @@
         <module>study-pay</module>
         <module>study-leetcode</module>
         <module>study-spring</module>
+        <module>study-log</module>
     </modules>
 </project>
