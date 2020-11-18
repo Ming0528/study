@@ -13,6 +13,9 @@ public class SystemTest {
 
     @Test
     public void testSystemApi() {
+        String javaHome = System.getProperty("java.home");
+        System.out.println("javaHome is:" + javaHome);
+        System.out.println();
         Map<String,String> allEnvMap = System.getenv();
         System.out.println("allEnvMap is:" + allEnvMap);
     }
