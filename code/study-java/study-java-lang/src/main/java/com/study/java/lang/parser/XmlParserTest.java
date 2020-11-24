@@ -29,45 +29,45 @@ public class XmlParserTest {
     public void parse() {
         File ipay88File = new File(FILE_PATH);
 
-        try {
-            Document document = null;
-            SAXReader reader = new SAXReader();
-            document = reader.read(ipay88File);
-            String DATA_NODE_PATH = "/table/tbody/tr";
-            List<Element> appNodeList = (List<Element>) document.selectNodes(DATA_NODE_PATH);
-
-
-            Element element = document.getRootElement();
-            element.elements();
-            element.element("table");
-            element.attributes();
-            System.out.println("parse end");
-        }
-        catch (Exception e) {
-            System.out.println("happen error");
-        }
-        System.out.println("In HtmlParserTest, parse ending!!!");
+//        try {
+//            Document document = null;
+//            SAXReader reader = new SAXReader();
+//            document = reader.read(ipay88File);
+//            String DATA_NODE_PATH = "/table/tbody/tr";
+//            List<Element> appNodeList = (List<Element>) document.selectNodes(DATA_NODE_PATH);
+//
+//
+//            Element element = document.getRootElement();
+//            element.elements();
+//            element.element("table");
+//            element.attributes();
+//            System.out.println("parse end");
+//        }
+//        catch (Exception e) {
+//            System.out.println("happen error");
+//        }
+//        System.out.println("In HtmlParserTest, parse ending!!!");
     }
 
     @Test
     public void parseXml() {
         File ipay88File = new File(APP_PATH);
 
-        try {
-            Document document = null;
-            SAXReader reader = new SAXReader();
-            document = reader.read(ipay88File);
-            Element element = document.getRootElement();
-            element.elements();
-            element.attributes();
-
-            String APP_NODE_PATH = "/amp/apps/app";
-            List<Element> appNodeList = (List<Element>) document.selectNodes(APP_NODE_PATH);
-            System.out.println("parse end");
-        }
-        catch (Exception e) {
-            System.out.println("happen error");
-        }
-        System.out.println("In HtmlParserTest, parse ending!!!");
+//        try {
+//            Document document = null;
+//            SAXReader reader = new SAXReader();
+//            document = reader.read(ipay88File);
+//            Element element = document.getRootElement();
+//            element.elements();
+//            element.attributes();
+//
+//            String APP_NODE_PATH = "/amp/apps/app";
+//            List<Element> appNodeList = (List<Element>) document.selectNodes(APP_NODE_PATH);
+//            System.out.println("parse end");
+//        }
+//        catch (Exception e) {
+//            System.out.println("happen error");
+//        }
+//        System.out.println("In HtmlParserTest, parse ending!!!");
     }
 }
