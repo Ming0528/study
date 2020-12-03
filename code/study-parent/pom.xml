@@ -25,6 +25,7 @@
         <org.mockito.version>2.23.4</org.mockito.version>
         <lombok.version>1.16.20</lombok.version>
         <commons.csv.version>1.8</commons.csv.version>
+        <commons.lang3.version>3.8.1</commons.lang3.version>
         <commons.io.version>2.2</commons.io.version>
         <log.slf4j.version>1.7.5</log.slf4j.version>
         <log.logback.core.version>1.2.3</log.logback.core.version>
@@ -101,6 +102,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-csv</artifactId>
                 <version>${commons.csv.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.poi</groupId>
