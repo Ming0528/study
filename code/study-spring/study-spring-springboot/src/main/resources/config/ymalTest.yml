@@ -1,0 +1,50 @@
+payment:
+  config:
+    reconcile:
+      fileRule:
+        # 使用方
+        payUser:
+          # payc约定使用方对账文件格式
+          - objectIds : "1,2,3,4,5,6,7,8,9,10"
+            fileReconcile: "payUserReconcile"
+            fileNamePattern: "_USER_"
+            fileSuffixRuleMap:
+              "txt": "payUserFileParser"
+            fileBodyStartRowOffset: 3
+            fileBodyEndRowOffset: 0
+        # 支付渠道
+        payChannel:
+          # payc约定支付渠道对账文件格式 eg: 积分、余额
+          - objectIds: "20,21"
+            fileReconcile: "payChannelReconcile"
+            fileNamePattern: "_CHANNEL_"
+            fileSuffixRuleMap:
+              "txt": "payChannelFileParser"
+            fileBodyStartRowOffset: 3
+            fileBodyEndRowOffset: 0
+          # CyberSource
+          - objectIds: "29"
+            fileReconcile: "payChannelReconcile"
+            fileNamePattern: "TransactionRequestReport"
+            fileSuffixRuleMap:
+              "csv": "cyberSourceCsvFileParser"
+            fileBodyStartRowOffset: 2
+            fileBodyEndRowOffset: 0
+          # iPay88
+          - objectIds: "31"
+            fileReconcile: "payChannelReconcile"
+            fileNamePattern: "TransacRpt"
+            fileSuffixRuleMap:
+              "xls": "eightPayExcelFileParser"
+            fileBodyStartRowOffset: 1
+            fileBodyEndRowOffset: 0
+          # Fucent
+          - objectIds: "1001"
+            fileReconcile: "payChannelReconcile"
+            fileNamePattern: "cashier_record"
+            fileSuffixRuleMap:
+              "csv": "fucentCsvFileParser"
+              "xls": "fucentExcelFileParser"
+              "xlsx": "fucentExcelFileParser"
+            fileBodyStartRowOffset: 1
+            fileBodyEndRowOffset: 1
