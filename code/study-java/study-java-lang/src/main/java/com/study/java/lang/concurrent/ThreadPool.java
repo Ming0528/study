@@ -9,7 +9,6 @@ public class ThreadPool {
     private static final int THREAD_CNT = 1;
     private static final long THREAD_KEEP_ALIVE_TIME = 0L;
     private static final String THREAD_NAME_FORMAT = "supplement-reconcile-pool-%d";
-
     @Test
     public void testSubmit() {
         ExecutorService executorService = Executors.newCachedThreadPool();
