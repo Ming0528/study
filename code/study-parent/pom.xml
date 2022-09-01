@@ -32,7 +32,7 @@
         <log.logback.classic.version>1.2.3</log.logback.classic.version>
         <apache.poi.version>3.17</apache.poi.version>
         <dom4j.version>2.1.3</dom4j.version>
-        <jsoup.version>1.13.1</jsoup.version>
+        <jsoup.version>1.15.3</jsoup.version>
         <jaxen.version>1.1.6</jaxen.version>
         <study.version>1.0-SNAPSHOT</study.version>
     </properties>
